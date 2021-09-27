@@ -1,0 +1,16 @@
+server:
+  port: 6091
+keycloak:
+  realm: crud-service
+  auth-server-url: http://localhost:8080/auth
+  resource: login-app
+#  credentials:
+#    secret: 6ee00361-45ea-4be9-b3fe-b06788ed9a2f
+  cors: true
+  bearer-only: true
+  securityConstraints[0]:
+    authRoles[0]: user
+    securityCollections[0]:
+      name: user
+      patterns[0]: /api/*
+password: 123123123
